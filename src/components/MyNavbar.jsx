@@ -10,15 +10,14 @@ import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import CW from "../assets/cw.svg";
 import Card from "@mui/material/Card";
 import { CardActionArea } from "@mui/material";
+import { blueGrey } from "@mui/material/colors";
 import { Link } from "react-router-dom";
 
-const pages = ["Products", "Pricing", "Blog"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
-const ResponsiveAppBar = () => {
+const MyNavBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -37,8 +36,10 @@ const ResponsiveAppBar = () => {
     setAnchorElUser(null);
   };
 
+  const color1 = blueGrey[900];
+
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{ bgcolor: "#212121" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters sx={{ justifyContent: "space-between" }}>
           <Typography
@@ -49,16 +50,21 @@ const ResponsiveAppBar = () => {
           >
             <Card
               sx={{
-                maxWidth: 60,
+                maxWidth: 70,
                 padding: 1,
-                bgcolor: "#1976D2",
+                bgcolor: "#212121",
                 borderRadius: 3,
                 boxShadow: 0,
               }}
             >
               {/* <Link to="/"> */}
               <CardActionArea>
-                <CardMedia component="img" height="60" image={CW} alt="CW" />
+                <CardMedia
+                  component="img"
+                  height="70"
+                  image="https://www-league.nhlstatic.com/images/logos/league-dark/133-flat.svg"
+                  alt="CW"
+                />
               </CardActionArea>
               {/* </Link> */}
             </Card>
@@ -80,7 +86,12 @@ const ResponsiveAppBar = () => {
             >
               {/* <Link to="/"> */}
               <CardActionArea>
-                <CardMedia component="img" height="60" image={CW} alt="CW" />
+                <CardMedia
+                  component="img"
+                  height="60"
+                  image="https://www-league.nhlstatic.com/images/logos/league-dark/133-flat.svg"
+                  alt="CW"
+                />
               </CardActionArea>
               {/* </Link> */}
             </Card>
@@ -119,4 +130,4 @@ const ResponsiveAppBar = () => {
     </AppBar>
   );
 };
-export default ResponsiveAppBar;
+export default MyNavBar;
